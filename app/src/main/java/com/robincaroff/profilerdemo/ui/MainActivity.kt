@@ -15,11 +15,11 @@ class MainActivity : ScopedAppActivity() {
         setSupportActionBar(toolbar)
 
         button_main_apods.setOnClickListener {
-            APODsListActivity.start(MainActivity@ this)
+            APODsListActivity.start(this)
         }
 
         button_main_progressbar.setOnClickListener {
-            ProgressBarActivity.start(MainActivity@ this)
+            ProgressBarActivity.start(this)
         }
     }
 }
