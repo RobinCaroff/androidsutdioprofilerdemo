@@ -27,6 +27,11 @@
             android:name=".ui.apods.APODsListActivity"
             android:exported="true"
             android:label="@string/activity_apodslist_title" />
+
+        <activity
+            android:name=".ui.progressBar.ProgressBarActivity"
+            android:exported="true"
+            android:label="@string/activity_progressbar_title" />
     </application>
 
 </manifest>

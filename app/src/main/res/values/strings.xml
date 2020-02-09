@@ -3,4 +3,6 @@
     <string name="button_main_apods_list">APODs list</string>
     <string name="activity_apodslist_title">APODs list</string>
     <string name="button_apodslist_start">start</string>
+    <string name="button_main_progressbar">Progress Bar</string>
+    <string name="activity_progressbar_title">Donut Progress Bar</string>
 </resources>

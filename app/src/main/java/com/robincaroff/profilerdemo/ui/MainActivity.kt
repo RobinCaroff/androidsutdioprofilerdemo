@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.robincaroff.profilerdemo.R
 import com.robincaroff.profilerdemo.core.ScopedAppActivity
 import com.robincaroff.profilerdemo.ui.apods.APODsListActivity
+import com.robincaroff.profilerdemo.ui.progressBar.ProgressBarActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : ScopedAppActivity() {
@@ -15,6 +16,10 @@ class MainActivity : ScopedAppActivity() {
 
         button_main_apods.setOnClickListener {
             APODsListActivity.start(MainActivity@ this)
+        }
+
+        button_main_progressbar.setOnClickListener {
+            ProgressBarActivity.start(MainActivity@ this)
         }
     }
 }
