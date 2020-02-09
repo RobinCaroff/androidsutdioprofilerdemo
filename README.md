@@ -1,6 +1,3 @@
-# androidsutdioprofilerdemo
-Small app used for the Android Studio Profiler demos.
-
 # Android Studio Profiler - Demo App
 
 Small app used for the Android Studio Profiler demos.
