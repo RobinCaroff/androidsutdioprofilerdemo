@@ -3,10 +3,13 @@ package com.robincaroff.profilerdemo.ui.progressbar
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
 import com.robincaroff.profilerdemo.R
 import com.robincaroff.profilerdemo.core.ScopedAppActivity
 import kotlinx.android.synthetic.main.activity_progressbar.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class ProgressBarActivity : ScopedAppActivity() {
 
@@ -27,13 +30,15 @@ class ProgressBarActivity : ScopedAppActivity() {
     }
 
     private fun updateProgress() {
-        Handler().postDelayed({
-            val currentProgress = donutprogressbar_progressbar.progress
-            if (currentProgress < PROGRESS_TARGET) {
-                donutprogressbar_progressbar.progress = currentProgress + 1f
+        launch {
+            withContext(Dispatchers.Default) {
+                delay(UPDATE_DELAY_MILLISECONDS)
+            }
+            if (donutprogressbar_progressbar.progress < PROGRESS_TARGET) {
+                donutprogressbar_progressbar.progress += 1f
                 updateProgress()
             }
-        }, UPDATE_DELAY_MILLISECONDS)
+        }
     }
 
     companion object {
