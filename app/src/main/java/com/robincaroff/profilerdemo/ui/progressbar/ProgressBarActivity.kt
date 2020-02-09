@@ -10,8 +10,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.*
+import java.util.concurrent.TimeUnit
 
 class ProgressBarActivity : ScopedAppActivity() {
+
+    private val startingTime = Date().time
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,17 +37,21 @@ class ProgressBarActivity : ScopedAppActivity() {
         launch {
             withContext(Dispatchers.Default) {
                 delay(UPDATE_DELAY_MILLISECONDS)
-            }
-            if (donutprogressbar_progressbar.progress < PROGRESS_TARGET) {
-                donutprogressbar_progressbar.progress += 1f
-                updateProgress()
+
+                val elapsedSeconds = TimeUnit.MILLISECONDS.toSeconds(Date().time - startingTime)
+                withContext(Dispatchers.Main) {
+                    if (donutprogressbar_progressbar.progress < PROGRESS_TARGET) {
+                        donutprogressbar_progressbar.progress = elapsedSeconds.toFloat()
+                        updateProgress()
+                    }
+                }
             }
         }
     }
 
     companion object {
         const val PROGRESS_TARGET = 100f
-        const val UPDATE_DELAY_MILLISECONDS = 100L
+        const val UPDATE_DELAY_MILLISECONDS = 20L
 
         fun start(context: Context) {
             val intent = Intent(context, ProgressBarActivity::class.java)
