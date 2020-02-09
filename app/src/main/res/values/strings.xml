@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Profiler Demo</string>
-    <string name="button_main_start">Start</string>
+    <string name="button_main_apods_list">APODs list</string>
+    <string name="activity_apodslist_title">APODs list</string>
+    <string name="button_apodslist_start">start</string>
 </resources>

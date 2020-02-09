@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ui.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context=".ui.apods.APODsListActivity">
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_main_start"
+        android:id="@+id/button_apodslist_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_main_start"
+        android:text="@string/button_apodslist_start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

@@ -1,4 +1,4 @@
-package com.robincaroff.profilerdemo.ui
+package com.robincaroff.profilerdemo.ui.apods
 
 import android.view.LayoutInflater
 import android.view.View

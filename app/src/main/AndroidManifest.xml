@@ -22,6 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.apods.APODsListActivity"
+            android:exported="true"
+            android:label="@string/activity_apodslist_title" />
     </application>
 
 </manifest>
