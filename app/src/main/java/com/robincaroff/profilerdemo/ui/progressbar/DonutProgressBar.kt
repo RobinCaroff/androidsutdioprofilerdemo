@@ -58,7 +58,8 @@ open class DonutProgressBar @JvmOverloads constructor(
     var progress
         get() = _progress
         set(value) {
-            _progress = value
+            val fixedValue = if (value <= _maxProgress) value else _maxProgress
+            _progress = fixedValue
             invalidate()
         }
 
