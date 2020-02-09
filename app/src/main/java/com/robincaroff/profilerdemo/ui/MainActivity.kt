@@ -4,7 +4,7 @@ import android.os.Bundle
 import com.robincaroff.profilerdemo.R
 import com.robincaroff.profilerdemo.core.ScopedAppActivity
 import com.robincaroff.profilerdemo.ui.apods.APODsListActivity
-import com.robincaroff.profilerdemo.ui.progressBar.ProgressBarActivity
+import com.robincaroff.profilerdemo.ui.progressbar.ProgressBarActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : ScopedAppActivity() {

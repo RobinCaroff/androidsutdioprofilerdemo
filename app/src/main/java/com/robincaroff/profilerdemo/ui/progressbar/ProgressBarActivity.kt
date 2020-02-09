@@ -1,4 +1,4 @@
-package com.robincaroff.profilerdemo.ui.progressBar
+package com.robincaroff.profilerdemo.ui.progressbar
 
 import android.content.Context
 import android.content.Intent
