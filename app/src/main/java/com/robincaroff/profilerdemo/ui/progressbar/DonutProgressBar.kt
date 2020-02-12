@@ -5,6 +5,7 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Point
 import android.graphics.RectF
+import android.os.Trace
 import android.text.TextPaint
 import android.util.AttributeSet
 import android.view.View
@@ -100,6 +101,7 @@ open class DonutProgressBar @JvmOverloads constructor(
     }
 
     override fun onDraw(canvas: Canvas?) {
+        Trace.beginSection("DonutProgressBar onDraw")
         super.onDraw(canvas)
 
         if (canvas == null) {
@@ -123,6 +125,7 @@ open class DonutProgressBar @JvmOverloads constructor(
             center.y.toFloat() - ((textPaint.descent() + textPaint.ascent()) / 2),
             textPaint
         )
+        Trace.endSection()
     }
 
     private fun longProcess() {
