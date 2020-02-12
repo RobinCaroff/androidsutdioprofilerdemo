@@ -25,11 +25,11 @@ class APODsListActivity : ScopedAppActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
-        button_apodslist_start.setOnClickListener {
-            fetchData()
-        }
+        //button_apodslist_start.setOnClickListener {
+        fetchData()
+        //}
 
-        with(recyclerview_main_apods) {
+        with(recyclerview_apodslist) {
             layoutManager = androidx.recyclerview.widget.LinearLayoutManager(context)
             addItemDecoration(
                 androidx.recyclerview.widget.DividerItemDecoration(
@@ -47,7 +47,7 @@ class APODsListActivity : ScopedAppActivity() {
     }
 
     private fun fetchData() {
-        recyclerview_main_apods.visibility = View.VISIBLE
+        progressbar_apodslist.visibility = View.VISIBLE
         button_apodslist_start.visibility = View.GONE
 
         launch {
@@ -56,6 +56,8 @@ class APODsListActivity : ScopedAppActivity() {
                 apods = APODServiceImpl.getAPODs()
             }
             apodsAdapter.updateData(apods)
+            progressbar_apodslist.visibility = View.GONE
+            recyclerview_apodslist.visibility = View.VISIBLE
         }
     }
 
