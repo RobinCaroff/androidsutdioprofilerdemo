@@ -1,24 +1,13 @@
 package com.robincaroff.profilerdemo.core
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlin.coroutines.CoroutineContext
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.cancel
 
-abstract class ScopedAppActivity : AppCompatActivity(), CoroutineScope {
-    protected lateinit var job: Job
-    override val coroutineContext: CoroutineContext
-        get() = job + Dispatchers.Main
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        job = Job()
-    }
-
+abstract class ScopedAppActivity : AppCompatActivity(), CoroutineScope by MainScope() {
     override fun onStop() {
+        cancel()
         super.onStop()
-        job.cancel()
     }
 }
