@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.robincaroff.profilerdemo.R
 import com.robincaroff.profilerdemo.model.APOD
 import kotlinx.android.synthetic.main.item_apod.view.*
@@ -46,8 +45,6 @@ class APODsAdapter(private val onAPODClicked: ((APOD) -> Unit)) :
 
             Glide.with(itemView.context)
                 .load(apod.url)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
-                .skipMemoryCache(true)
                 .into(image)
 
             itemView.setOnClickListener { onAPODClicked(apod) }
